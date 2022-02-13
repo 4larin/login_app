@@ -1,16 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from './component/Login/Login';
 import Background from './assets/Lumen BG.svg'
+import ForgotPassword from './component/Login/ForgotPassword';
 
 
 const App = () => {
-  return( 
-  <Section> 
-  <Login/>
-   </Section>
-)};
+  let [forgotPassword, setForgotPassword] = useState(false)
+  return (
+    <Section>
+      {forgotPassword ? <ForgotPassword handleCancle={() => setForgotPassword(false)} /> : <Login handleForgotPassword={() => setForgotPassword(true)}/>  }
+    </Section>
+  )
+};
 
 
 const Section = styled.section`

@@ -1,25 +1,10 @@
-import react, {useState} from 'react'
 import {Modal, Button, Form} from 'react-bootstrap'
 import styled from 'styled-components'
 import Logo from '../../assets/Lumentum.png'
 
 
-const Login = () => {
+const Login = ({ handleForgotPassword}) => {
 
-    const [show, setShow] = useState(true);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    let [credentials, setCredentials] = useState({username:null, password:null})
-    const formHandler = (e)=>{
-        setCredentials(prevState =>{
-            return({
-                ...prevState,
-                [e.name]: e.value
-            })
-        })
-    }
 
   return (<div>
           <StyledModal>
@@ -42,7 +27,7 @@ const Login = () => {
                   </Form.Group>
                   <Form.Group className="mb-3 d-flex justify-content-between wrap flex-column align-items-center gap-1" controlId="formBasicCheckbox">
                       <Form.Check type="checkbox" label="Remember me" />
-                      <Form.Text> Forgot your password? Click here</Form.Text>
+                      <Form.Text onClick={handleForgotPassword}> Forgot your password? Click here   </Form.Text>
                   </Form.Group>
                   <Button className={'w-100'}  variant="primary" type="submit">
                       Login
