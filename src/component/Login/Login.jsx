@@ -22,49 +22,44 @@ const Login = () => {
     }
 
   return (<div>
-          <StyledModal
-              show={true}
-              onHide={handleClose}
-              backdrop="static"
-              keyboard={false}
-              centered
-          >
+          <StyledModal>
               <Modal.Header>
                   <Modal.Title>
                       <img src={Logo} alt="Lumentum Logo" />
                   </Modal.Title>
               </Modal.Header>
-              <Modal.Body className={'p-5'}>
+              <Modal.Body className={'p-3 p-md-5'}>
                  <div className="modal-body__header">
-                     <h3 className={'mb-4'}>Client Login</h3>
+                     <h3 className={'mb-4'}>Login</h3>
                  </div>
               <Form>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Control size="lg" type="email" placeholder="Enter email" />
+                      <Form.Control  type="email" placeholder="Enter email" />
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Control size="lg" type="password" placeholder="Password" />
+                      <Form.Control  type="password" placeholder="Password" />
                   </Form.Group>
                   <Form.Group className="mb-3 d-flex justify-content-between wrap flex-column align-items-center gap-1" controlId="formBasicCheckbox">
                       <Form.Check type="checkbox" label="Remember me" />
                       <Form.Text> Forgot your password? Click here</Form.Text>
                   </Form.Group>
-                  <Button className={'w-100'} size="lg" variant="primary" type="submit">
+                  <Button className={'w-100'}  variant="primary" type="submit">
                       Login
                   </Button>
               </Form>
               </Modal.Body>
-              <Modal.Footer>
-                  <Button size={'lg'} className={'px-4'} variant="secondary" onClick={handleClose}>
-                      Not yet a Member? Create Account Now
-                  </Button>
-              </Modal.Footer>
           </StyledModal>
   </div>);
 };
 
-const StyledModal = styled(Modal)`
+const StyledModal = styled.div`
+    width: 500px;
+    outline: 1px solid rgba(0,0,0,0.085);
+    border-radius: 4px;
+    @media screen and (max-width: 560px ){
+    width: 300px;
+    }
 .modal-header{
     background: #1654AD;
     display: flex;
@@ -72,7 +67,7 @@ const StyledModal = styled(Modal)`
     align-items: center;
     padding: 20px 0;
     img{
-        height:70px
+        height:50px
     }
 }
 
