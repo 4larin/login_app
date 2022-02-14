@@ -21,12 +21,14 @@ const ForgotPassword = ({handleCancle}) => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="email" placeholder="Enter email" />
           </Form.Group>
-          <Button className='px-5' variant="primary" type="submit">
+          <div className="d-flex gap-md-4 gap-3">
+          <Button className='px-5 w-100' variant="primary" type="submit">
             Submit
           </Button>
-          <Button onClick={handleCancle} className="mx-4 border border-secondary"   variant="outline" >
-            Cancle
+          <Button onClick={handleCancle} className="mx-0  w-100 border border-secondary"    variant="outline" >
+            Cancel
           </Button>
+          </div>
         </Form>
       </Modal.Body>
     </StyledModal>);
@@ -81,6 +83,9 @@ const StyledModal = styled.div`
 
     }
 }
+
+
+
 `
 
 
